@@ -1,0 +1,10 @@
+<p>Hola {{loggedUser.shownName}}</p>
+
+<div class='img-container'><img src='./assets/static/maestro.png'></div>
+
+<div class='options-container'>
+    <button class='main-button'><a routerLink="/participantes">Participantes</a></button>
+    <button class='main-button'><a routerLink="/grupos">Grupos</a></button>
+    <button class='main-button'><a routerLink="/expansiones">Expansiones</a></button>
+    <button class='main-button' (click)='onExit()'>Salir</button>
+</div>

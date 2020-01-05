@@ -1,0 +1,22 @@
+.img-volver { width: 2% }
+.img-volver:hover { filter: grayscale(100%) }
+
+.img-nuevo { width: 2% }
+.img-nuevo:hover { filter: grayscale(100%) }
+
+.nuevo-container { width: 40%; margin-top: 2vh; margin-bottom: 5vh }
+.nuevo-container label { font-size: x-large; margin-left: 5px }
+
+.select-container { width: 80%; display: grid; grid-template-columns:auto 70% 10% }
+.select-container label { font-size: larger }
+.select-container img { width: 50% }
+.select-container img:hover { filter: grayscale(100%) }
+.main-select { width: 80%; padding-left: 10px; background-color: rgba(3, 82, 89, 0.4); color: white; font-size: x-large; border: 0 }
+
+.list-container { margin-top: 5vh }
+.list-container p { font-size: xx-large }
+.list-container li { list-style: square; font-size: xx-large; cursor: pointer }
+.list-container li img { width: 2%; margin-left: 5% }
+.list-container li img:hover { -webkit-filter: grayscale(100%); filter: grayscale(100%); cursor: pointer }
+
+hr { width: 50% }

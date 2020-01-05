@@ -1,0 +1,32 @@
+<a routerLink="/principal"><img src='./assets/static/volver.png' class='img-volver'></a>
+
+<div class="select-container">
+    <label>Grupo</label>
+    <select class="main-select" [(ngModel)] = "selectedGroup" (change)="onSelectChange()">
+        <option [value]="group.name" *ngFor="let group of groupList">{{group.name}}</option>
+    </select>
+
+    <label>Participante</label>
+    <select class="main-select" [(ngModel)] = "selectedParticipant" (change)="onParticipantChange()">
+        <option [value]="p.username" *ngFor="let p of participantsList">{{p.shownName}}</option>
+    </select>
+</div>
+
+<p>{{msn}}</p>
+<div class="grid-container" >
+    <div class="grid-item">
+        <ul>
+            <li *ngFor = 'let c of challengesList'><span (click) = 'onChallengeClick(c.text, c._id, c.type,  c.points)'>{{c.type}}</span></li>
+        </ul>
+    </div>
+    <div class="grid-item" *ngIf='isSelected'>
+        <p>{{challengeText}}</p>
+        <p>{{msn2}}</p>
+        <select class="main-select" [(ngModel)] = "selectedGrade">
+            <option>10</option>
+            <option>15</option>
+            <option>20</option>
+        </select>
+        <button class="main-button" (click)='onGrade()'>OK</button>
+    </div>
+</div>

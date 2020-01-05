@@ -1,0 +1,6 @@
+<a routerLink="/principal"><img src='./assets/static/volver.png' class='img-volver'></a>
+<registro-participantes (emitter)="emision($event)"></registro-participantes>
+
+<hr>
+
+<lista-participantes [participantes] = 'participantes' [msn] = 'mensaje' (emitter)="emision($event)"></lista-participantes>

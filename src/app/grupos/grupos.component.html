@@ -1,0 +1,30 @@
+<a routerLink="/principal"><img src='./assets/static/volver.png' class='img-volver'></a>
+<div class="nuevo-container">
+    <label>Nombre del Nuevo Grupo</label><input type="text" class="main-text" [(ngModel)]="groupName"><img class="img-nuevo" src='./assets/static/nuevo.png' (click) = "createGroup()">
+    <p>{{msn}}</p>
+</div>
+
+<hr>
+
+<h1>Administrar Grupos</h1>
+<p>{{msn2}}</p>
+<div class="select-container">
+    <label>Seleccionar Grupo</label>
+    <select class="main-select" [(ngModel)] = "selectedGroup" (change)="onSelectChange()">
+        <option [value]="group.name" *ngFor="let group of groupList">{{group.name}}</option>
+    </select>
+    <img src="./assets/static/basura.png" (click) = "removeGroup()">
+    
+    <label>Seleccionar Participante</label>
+    <select class="main-select" [(ngModel)] = "selectedParticipant">
+        <option [value]="p.username" *ngFor="let p of unasignedList">{{p.shownName}}</option>
+    </select>
+    <img src="./assets/static/agregar.png" (click) = "asign()">
+</div>
+
+<div class="list-container">
+    <p>{{msn3}}</p>
+    <ul>
+        <li *ngFor="let p of participantsList"><label>{{p.shownName}}</label><img src="./assets/static/basura.png" (click)="unasign(p.username)"></li>
+    </ul>
+</div>

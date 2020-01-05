@@ -1,0 +1,11 @@
+<div class='register-container'>
+    <img src='./assets/static/agregar.png'><br>
+    <div class='form-container'>
+        <span>Usuario</span><input class='main-text' [(ngModel)]="username" type="text" (keyup.enter)="register()">
+        <span>Nombre</span><input class='main-text' [(ngModel)]="shownName" type="text" (keyup.enter)="register()">
+        <span>Clave</span><input class='main-text' [(ngModel)]="password" type="password" (keyup.enter)="register()">
+        <span>Confirmar Clave</span><input class='main-text' [(ngModel)]="confirm" type="password" (keyup.enter)="register()">
+    </div>
+    <p>{{msn}}</p>
+    <input type="button" class='main-button' (click) = "register()" value="Registrar">
+</div>

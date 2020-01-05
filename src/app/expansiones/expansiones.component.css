@@ -1,0 +1,13 @@
+.img-volver { width: 2% }
+.img-volver:hover { filter: grayscale(100%) }
+
+.select-container { width: 80% }
+.select-container label { font-size: x-large }
+.select-container img { width: 50% }
+.select-container img:hover { filter: grayscale(100%) }
+.main-select { width: 20%; padding-left: 10px; background-color: rgba(3, 82, 89, 0.4); color: white; font-size: x-large; border: 0 }
+
+.grid-container { display: grid; grid-gap: 10px; margin-left: 10px; margin-top: 10px; grid-template-columns: auto auto }
+.grid-item { text-align: justify; font-size: x-large }
+.grid-item li { cursor: pointer }
+.grid-item li:hover { color: red }

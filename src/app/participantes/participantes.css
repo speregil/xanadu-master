@@ -1,0 +1,14 @@
+.register-container { margin-left: 3%; margin-top: 5vh; margin-bottom: 1vh }
+.form-container { width: 100% }
+.form-container span { font-size: larger; margin-right: 1% }
+.form-container input { width: 15%; margin-right: 1% }
+
+img { width: 3% }
+.img-volver:hover { filter: grayscale(100%) }
+
+hr { width: 50% }
+
+.participant-list { list-style-type: none; margin: 0; padding: 0 }
+.participant-list li { display: grid; grid-template-columns: 30% 30%; font-size: xx-large }
+.participant-list img { width: 12% }
+.participant-list img:hover { filter: grayscale(100%); cursor: pointer }

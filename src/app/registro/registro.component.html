@@ -1,0 +1,11 @@
+<div class="form-container">
+    <label>Usuario</label><input class="main-text" [(ngModel)]="username" type="text" (keyup.enter)="register()">
+    <label>Nombre</label><input class="main-text" [(ngModel)]="shownName" type="text" (keyup.enter)="register()">
+    <label>Clave</label><input class="main-text" [(ngModel)]="password" type="password" (keyup.enter)="register()">
+    <label>Confirmar Clave</label><input class="main-text" [(ngModel)]="confirm" type="password" (keyup.enter)="register()">
+</div>
+<div class="option-container">
+    <p>{{msn}}</p>
+    <input type="button" (click) = "register()" value="Registrarse" class="main-button register-button">
+    <input type="button" (click) = "goBack()" value="Volver" class="main-button register-button">
+</div>
