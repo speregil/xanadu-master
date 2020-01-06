@@ -40,7 +40,8 @@ export class ExpansionesComponent {
   }
 
   getParticipants(){
-    this.service.listParticipants(this.selectedGroup).subscribe(response => {
+    var master = this.user.getUserLoggedIn();
+    this.service.listParticipants(this.selectedGroup, master.username).subscribe(response => {
         this.participantsList = response["list"]
         this.msn = "";
     });

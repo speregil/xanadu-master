@@ -4,3 +4,6 @@
 <hr>
 
 <lista-participantes [participantes] = 'participantes' [msn] = 'mensaje' (emitter)="emision($event)"></lista-participantes>
+
+<input *ngIf = "mostrando == false" type="button" class='main-button' (click) = "getParticipantes()" value="Ver Participantes Actuales">
+<input *ngIf = "mostrando == true" type="button" class='main-button' (click) = "hideParticipantes()" value="Ocultar Lista">

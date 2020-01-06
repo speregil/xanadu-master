@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { ConfigurationService } from './configuration.service';
 
 /**
  * Servicio para el acceso al API del servidor
@@ -7,9 +8,11 @@ import { HttpClient } from '@angular/common/http';
 @Injectable()
 export class ParticipantsService {
 
-    host = '34.95.158.164:3100';
+    host = null;
 
-    constructor ( private http: HttpClient) {}
+    constructor ( private http: HttpClient, private config: ConfigurationService) {
+        this.host = config.serverhost;
+    }
 
     getParticipants() {
         return this.http.get<{}>('http://' + this.host + '/participantes');

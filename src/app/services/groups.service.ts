@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { ConfigurationService } from './configuration.service';
 
 /**
  * Servicio para el acceso al API del servidor
@@ -7,9 +8,11 @@ import { HttpClient } from '@angular/common/http';
 @Injectable()
 export class GroupService {
 
-    host = '34.95.158.164:3100';
+    host = '';
 
-    constructor ( private http: HttpClient) {}
+    constructor ( private http: HttpClient, private config: ConfigurationService) {
+        this.host = config.serverhost;
+    }
 
     addGroup(group, master){
         return this.http.post('http://' + this.host + '/groups/new', {group: group, master: master});
@@ -31,7 +34,7 @@ export class GroupService {
         return this.http.get('http://' + this.host + '/groups/list/' + masterName);
     }
 
-    listParticipants(groupName){
-        return this.http.get('http://' + this.host + '/groups/participants/' + groupName);
+    listParticipants(group, masterName){
+        return this.http.post('http://' + this.host + '/groups/participants/', {groupname: group, master: masterName });
     }
 }

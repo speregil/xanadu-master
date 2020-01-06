@@ -7,6 +7,7 @@ import { MasterRoutingModule } from './master-routing.module';
 import { UserService } from './services/user.service';
 import { ParticipantsService } from './services/participants.service';
 import { GroupService } from './services/groups.service';
+import { ConfigurationService } from './services/configuration.service';
 
 import { MasterComponent } from './master.component';
 import { PrincipalComponent } from './principal.component';
@@ -39,7 +40,8 @@ import { ExpansionesComponent } from './expansiones/expansiones.component';
   providers: [
     UserService,
     ParticipantsService,
-    GroupService
+    GroupService,
+    ConfigurationService
   ],
   bootstrap: [ MasterComponent ]
 })

@@ -16,16 +16,15 @@ export class PrincipalParticipantesComponent {
   // Campos y Atributos
   //-------------------------------------------------------------------------
 
-  participantes = new Array();    // Lista actual de participantes en el sistema
-  mensaje = "Cargando la lista";  // Mensaje del estado actual del componente
+  participantes = new Array();       // Lista actual de participantes en el sistema
+  mensaje = "";                      // Mensaje del estado actual del componente
+  mostrando = false;                 // Determina si se está mostrando la lista de participantes o no
 
   //-------------------------------------------------------------------------
   // Constructor
   //-------------------------------------------------------------------------
 
-  constructor(private service: ParticipantsService){
-    this.getParticipantes();
-  }
+  constructor(private service: ParticipantsService){}
 
   //-------------------------------------------------------------------------
   // Funciones
@@ -36,9 +35,18 @@ export class PrincipalParticipantesComponent {
    */
   getParticipantes() {
     this.service.getParticipants().subscribe(data => {
-      this.participantes = data["list"];
       this.mensaje = data['mensaje'];
+      this.participantes = data["list"];
+      this.mostrando = true;
     });
+  }
+
+  /**
+   * Limpia la lista actual de participantes que se está mostrando
+   */
+  hideParticipantes() {
+    this.participantes = [];
+    this.mostrando = false;
   }
 
   /**

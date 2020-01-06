@@ -95,9 +95,10 @@ export class GroupComponent {
      * selectedGroup Campo con el ID del grupo seleccionado actualmente
      */
     getParticipants(){
-        this.service.listParticipants(this.selectedGroup).subscribe(response => {
+        var master = this.user.getUserLoggedIn();
+        this.service.listParticipants(this.selectedGroup, master.username).subscribe(response => {
             this.participantsList = response["list"]
-            this.msn3 = "";
+            this.msn3 = response["mensaje"];
         });
     }
 

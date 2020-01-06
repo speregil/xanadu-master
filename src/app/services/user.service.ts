@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { User } from './user.model';
+import { ConfigurationService } from './configuration.service';
 
 /**
  * Servicio para el acceso al API del servidor
@@ -8,10 +9,12 @@ import { User } from './user.model';
 @Injectable()
 export class UserService {
   
-    host = '34.95.158.164:3100';
+    host = '';
     private isUserLoggedIn = false;
 
-    constructor ( private http: HttpClient) {}
+    constructor ( private http: HttpClient, private config: ConfigurationService) {
+        this.host = config.serverhost;
+    }
 
     register(pUser : string, pPassword : string, pName : String){
         return this.http.post<{}>('http://' + this.host + '/register/', {user : pUser, password : pPassword, shownName : pName, admin: true});
