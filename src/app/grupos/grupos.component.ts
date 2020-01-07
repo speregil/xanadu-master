@@ -120,8 +120,9 @@ export class GroupComponent {
     asign(){
         if(confirm("¿Desea asignar el participante al grupo?")){
             this.msn2 = "Asignando";
+            var master = this.user.getUserLoggedIn();
             if(this.selectedGroup && this.selectedParticipant){
-                this.service.asign(this.selectedGroup, this.selectedParticipant).subscribe(response =>{
+                this.service.asign(this.selectedGroup, master.username, this.selectedParticipant).subscribe(response =>{
                     if(response["mensaje"])
                         this.msn2 = response["mensaje"];
                     else{
@@ -145,8 +146,9 @@ export class GroupComponent {
     unasign( username ){
         if(confirm("¿Desea eliminar al participante del grupo?")){
             this.msn2 = "Eliminando";
+            var master = this.user.getUserLoggedIn();
             if(this.selectedGroup){
-                this.service.unasign(this.selectedGroup, username).subscribe(response =>{
+                this.service.unasign(this.selectedGroup, master.username, username).subscribe(response =>{
                     if(response["mensaje"])
                         this.msn2 = response["mensaje"];
                     else{

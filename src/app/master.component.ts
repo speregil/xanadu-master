@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Router } from "@angular/router";
 
 @Component({
   selector: 'master-root',
@@ -7,4 +6,7 @@ import { Router } from "@angular/router";
   styleUrls: ['./master.component.css']
 })
 
+/**
+ * Componente principal del la aplicación Xanadu, la versión del master
+ */
 export class MasterComponent { }
