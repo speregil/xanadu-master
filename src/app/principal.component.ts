@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { UserService } from './services/user.service';
 import { Router } from "@angular/router";
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'principal',
@@ -23,7 +24,7 @@ export class PrincipalComponent {
   // Constructor
   //--------------------------------------------------------------------------------
 
-  constructor(private service: UserService, private router: Router){
+  constructor(private service: UserService, private router: Router, private http: HttpClient){
     this.loggedUser = this.service.getUserLoggedIn();
   }
 
@@ -37,5 +38,9 @@ export class PrincipalComponent {
   onExit(){
     this.service.setUserLoggedOut()
     this.router.navigate(['']);
+  }
+
+  onInstrucciones(){
+    window.open("assets/static/instrucciones.pdf", "_blank");
   }
 } 
