@@ -1,6 +1,12 @@
 <div class='register-container'>
     <p>{{msn}}</p>
     <ul class='participant-list'>
-        <li *ngFor="let p of participantes"><span>{{p.shownName}}</span><img src='./assets/static/basura.png' (click) = "unregister(p.username)"></li>    
+        <li *ngFor="let p of participantes">
+            <span>{{p.shownName}}</span>
+            <img src='./assets/static/basura.png' (click) = "unregister(p.username)">
+            <img *ngIf = "p.username != change" src='./assets/static/agregar.png' (click) = "activePassword(p.username)">
+            <input *ngIf = "p.username == change" type="password" [(ngModel)]="nPassword">
+            <img *ngIf = "p.username == change" src='./assets/static/agregar.png' (click) = "changePassword(p.username)">
+        </li>    
     </ul>
 </div>

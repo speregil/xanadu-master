@@ -51,6 +51,15 @@ export class UserService {
     }
 
     /**
+     * Cambia la contraseña del usuario que entra por parámetro
+     * @param pUser Nombre del usuario
+     * @param pPassword Nueva clave del usuario
+     */
+    changePassword(pUser: string, pPassword){
+        return this.http.post<{}>('http://' + this.host + '/changepass/',{username: pUser, password: pPassword});
+    }
+
+    /**
      * Verifica el inicio de sesión de un usuario
      * @param pUser Username
      * @param pPassword Clave

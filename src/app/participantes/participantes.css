@@ -9,6 +9,6 @@ img { width: 3% }
 hr { width: 50% }
 
 .participant-list { list-style-type: none; margin: 0; padding: 0 }
-.participant-list li { display: grid; grid-template-columns: 30% 30%; font-size: xx-large }
+.participant-list li { display: grid; grid-template-columns: 20% 20% 25% 20%; font-size: xx-large }
 .participant-list img { width: 12% }
 .participant-list img:hover { filter: grayscale(100%); cursor: pointer }

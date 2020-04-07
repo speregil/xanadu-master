@@ -1,6 +1,7 @@
 import { Component, Input, EventEmitter, Output } from '@angular/core';
 import { ParticipantsService } from '../services/participants.service';
 import { User } from '../services/user.model';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'lista-participantes',
@@ -20,12 +21,14 @@ export class ListaParticipantesComponent {
     @Input() participantes : Array<User>;             // Atributo injectado de la lista de participantes actual en el sistema
     @Input() msn: String;                             // Atributo injectado del mensaje del resultado de la operación actual
     @Output() emitter = new EventEmitter<string>();   // Atributo para emitir el resultado de la operación actual
+    change:string = "";
+    nPassword:string = "";
 
   //------------------------------------------------------------------------------------------
   // Constructor
   //------------------------------------------------------------------------------------------
 
-    constructor(private service: ParticipantsService){}
+    constructor(private service: ParticipantsService, private user: UserService){}
 
   //------------------------------------------------------------------------------------------
   // Funciones
@@ -43,6 +46,31 @@ export class ListaParticipantesComponent {
         alert(data["mensaje"]);
         this.emitter.emit("delete");
       });
+    }
+  }
+
+  /**
+   * Muestra los campos de cambio de contraseña del usuario seleccionado
+   * @param userID Nmbre del usuario del que se desea activar los campos
+   */
+  activePassword(userID){
+    this.change = userID;
+    this.nPassword = "";
+  }
+
+  changePassword(user){
+    if(confirm('¿Desea cambiar la contraseña de este usuario?')){
+      if(this.nPassword){
+        this.user.changePassword(user, this.nPassword).subscribe(data => {
+        this.nPassword = ""
+        if(data["mensaje"])
+          alert(data["mensaje"]);
+        else
+          alert("Cambio de clave exitoso");
+        });
+      }
+      else
+        alert("Introduzca una clave válida");
     }
   }
 } 
