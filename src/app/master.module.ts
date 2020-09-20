@@ -7,6 +7,7 @@ import { MasterRoutingModule } from './master-routing.module';
 import { UserService } from './services/user.service';
 import { ParticipantsService } from './services/participants.service';
 import { GroupService } from './services/groups.service';
+import { ChallengesService } from './services/challenges.service';
 import { ConfigurationService } from './services/configuration.service';
 
 import { MasterComponent } from './master.component';
@@ -18,6 +19,7 @@ import { RegistroParticipantesComponent } from './participantes/registro.partici
 import { ListaParticipantesComponent } from './participantes/lista.participantes';
 import { GroupComponent } from './grupos/grupos.component';
 import { ExpansionesComponent } from './expansiones/expansiones.component';
+import { RetosComponent } from './retos/retos.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,8 @@ import { ExpansionesComponent } from './expansiones/expansiones.component';
     RegistroParticipantesComponent,
     ListaParticipantesComponent,
     GroupComponent,
-    ExpansionesComponent 
+    ExpansionesComponent,
+    RetosComponent 
   ],
   imports: [
     BrowserModule,
@@ -41,6 +44,7 @@ import { ExpansionesComponent } from './expansiones/expansiones.component';
     UserService,
     ParticipantsService,
     GroupService,
+    ChallengesService,
     ConfigurationService
   ],
   bootstrap: [ MasterComponent ]

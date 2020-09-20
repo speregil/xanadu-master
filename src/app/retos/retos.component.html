@@ -1,0 +1,36 @@
+<a routerLink="/principal"><img src='./assets/static/volver.png' class='img-volver'></a>
+<div>
+    <h1>Crear un nuevo reto</h1>
+    <div class="crear">
+        <label>Tipo de reto</label>
+        <select class="main-select" [(ngModel)] = "tipoSeleccionado">
+            <option [value]="'oraculo'">Oráculo</option>
+            <option [value]="'juglar'">Juglar</option>
+        </select>
+    </div>
+    <div>
+        <label>Descripción</label>
+        <textarea [(ngModel)] = "descripcion"></textarea>
+    </div>
+    <p>{{msn}}</p>
+    <div>
+        <button class='main-button' (click) = "crear()">Agregar</button>
+        <button class='main-button' (click) = "limpiar()">Limpiar</button>
+    </div>
+</div>
+
+<hr>
+
+<div>
+    <h1>Mis retos creados</h1>
+    <p>{{msn}}</p>
+    <ul>
+        <li *ngFor="let r of listaRetos">
+            <div class="reto">
+                <span class="tipo">Tipo: {{r.type}}</span>
+                <span class="borrar"><img src="./assets/static/basura.png" (click) = "borrar(r._id)"></span>  
+            </div>
+            <p class="descripcion">{{r.text}}</p>
+        </li>    
+    </ul>
+</div>

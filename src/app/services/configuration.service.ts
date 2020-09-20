@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class ConfigurationService{
 
-    readonly serverhost: string = '34.235.81.202:3131';     // Dirección del host del servidor del API
+    readonly serverhost: string = 'localhost:3131';     // Dirección del host del servidor del API
 
     constructor () {}
 }

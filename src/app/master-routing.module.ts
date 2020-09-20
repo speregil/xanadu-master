@@ -6,6 +6,7 @@ import { RegistroComponent } from './registro/registro.component';
 import { LoginComponent } from './registro/login.component';
 import { PrincipalParticipantesComponent } from './participantes/principal.participantes';
 import { GroupComponent } from './grupos/grupos.component';
+import { RetosComponent } from './retos/retos.component';
 import { ExpansionesComponent } from './expansiones/expansiones.component';
 
 const routes: Routes = [
@@ -15,7 +16,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'participantes', component: PrincipalParticipantesComponent },
   { path: 'grupos', component: GroupComponent },
-  { path: 'expansiones', component: ExpansionesComponent }
+  { path: 'expansiones', component: ExpansionesComponent },
+  { path: 'retos', component: RetosComponent }
 ];
 
 @NgModule({

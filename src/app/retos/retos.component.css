@@ -1,0 +1,14 @@
+.img-volver { width: 2% }
+.img-volver:hover { filter: grayscale(100%) }
+.crear { margin: 1% 0 1% 0 }
+.reto { display: grid; grid-template-columns:30% 15% }
+.tipo { font-size: xx-large; margin: 0 1% 0 0 }
+.borrar { margin-left: 15% }
+.borrar img { width: 15% }
+.borrar img:hover { filter: grayscale(100%); cursor: pointer }
+
+textarea { display: block; margin: 1% 0 1% 0; width: 35%; height: 15vh; }
+label { font-size: x-large; margin: 0 2% 0 0 }
+select { display: block; width: 35%; margin: 1% 0 1% 0 }
+ul { list-style-type: none }
+hr { width: 50% }
