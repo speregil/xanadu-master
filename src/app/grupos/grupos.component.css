@@ -7,7 +7,7 @@
 .nuevo-container { width: 40%; margin-top: 2vh; margin-bottom: 5vh }
 .nuevo-container label { font-size: x-large; margin-left: 5px }
 
-.select-container { width: 80%; display: grid; grid-template-columns:auto 70% 10% }
+.select-container { width: 80%; display: grid; grid-template-columns:auto 20% 50% 10% }
 .select-container label { font-size: larger }
 .select-container img { width: 50% }
 .select-container img:hover { filter: grayscale(100%) }

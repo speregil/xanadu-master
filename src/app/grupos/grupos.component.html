@@ -10,14 +10,16 @@
 <p>{{msn2}}</p>
 <div class="select-container">
     <label>Seleccionar Grupo</label>
+    <input type="text" class="main-text" (ngModelChange)="filterGroups($event)" [(ngModel)]="groupText" placeholder="Filtrar grupos...">
     <select class="main-select" [(ngModel)] = "selectedGroup" (change)="onSelectChange()">
-        <option [value]="group.name" *ngFor="let group of groupList">{{group.name}}</option>
+        <option [value]="group.name" *ngFor="let group of filteredGroups">{{group.name}}</option>
     </select>
     <img src="./assets/static/basura.png" (click) = "removeGroup()">
     
     <label>Seleccionar Participante</label>
+    <input type="text" class="main-text" (ngModelChange)="filterParticipants($event)" [(ngModel)]="participantText" placeholder="Filtrar participantes...">
     <select class="main-select" [(ngModel)] = "selectedParticipant">
-        <option [value]="p.username" *ngFor="let p of unasignedList">{{p.shownName}}</option>
+        <option [value]="p.username" *ngFor="let p of filteredUnasigned">{{p.shownName}}</option>
     </select>
     <img src="./assets/static/agregar.png" (click) = "asign()">
 </div>

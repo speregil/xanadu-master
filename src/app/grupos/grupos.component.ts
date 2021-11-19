@@ -22,6 +22,8 @@ export class GroupComponent {
 
     groupList = [];                     // Atributo que guarda la lista de todos los grupos en el sistema que le pertenecen al master en sesion
     participantsList = [];              // Atributo que guarda la lista de participantes del grupo actualmente seleccionado
+    filteredUnasigned = [];          // Atributo que guarda la lista filtrada de los participantes que finalmente se muestra en la interfaz
+    filteredGroups = [];                // Atributo que guarda la lista filtrada de los participantes que finalmente se muestra en la interfaz
     unasignedList = [];                 // Atributo que guarda la lista de todos los participantes sin asignar en el sistema
 
     selectedGroup = "";                 // Campo para el ID del grupo actualmente seleccionado
@@ -75,6 +77,7 @@ export class GroupComponent {
         var master = this.user.getUserLoggedIn();
         this.service.listGroups(master.username).subscribe(response => {
             this.groupList = response["list"]
+            this.filteredGroups = this.groupList;
             if(this.selectedGroup)
                 this.getParticipants();
             this.msn2 = "";
@@ -97,7 +100,7 @@ export class GroupComponent {
     getParticipants(){
         var master = this.user.getUserLoggedIn();
         this.service.listParticipants(this.selectedGroup, master.username).subscribe(response => {
-            this.participantsList = response["list"]
+            this.participantsList = response["list"];
             this.msn3 = response["mensaje"];
         });
     }
@@ -107,7 +110,8 @@ export class GroupComponent {
      */
     getUnasigned(){
         this.participants.listUnasigned().subscribe(response =>{
-            this.unasignedList = response["list"]
+            this.unasignedList = response["list"];
+            this.filteredUnasigned = this.unasignedList;
         });
     }
 
@@ -186,6 +190,36 @@ export class GroupComponent {
                     }
                 });
             }
+        }
+    }
+ 
+    /**
+     * Evento para filtrar la lista de participantes usando el input correspondiente
+     * @param event Evento del input de texto
+     */
+    filterParticipants(event) {
+        if (!event) {
+            this.filteredUnasigned = this.unasignedList;
+        }  
+        if (typeof event === 'string') {
+            this.filteredUnasigned = this.unasignedList.filter(function(a){
+                return a.shownName.toLowerCase().startsWith(event.toLowerCase())
+            });
+        }
+    }
+
+    /**
+     * Evento para filtrar la lista de grupos usando el input correspondiente
+     * @param event Evento del input de texto
+     */
+     filterGroups(event) {
+        if (!event) {
+            this.filteredGroups = this.groupList;
+        }  
+        if (typeof event === 'string') {
+            this.filteredGroups = this.groupList.filter(function(a){
+                return a.name.toLowerCase().startsWith(event.toLowerCase())
+            });
         }
     }
 } 
