@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
 import { MasterRoutingModule } from './master-routing.module';
 
 import { UserService } from './services/user.service';
@@ -39,8 +38,7 @@ import { RetosComponent } from './retos/retos.component';
     BrowserModule,
     MasterRoutingModule,
     HttpClientModule,
-    FormsModule,
-    DropDownListModule
+    FormsModule
   ],
   providers: [
     UserService,

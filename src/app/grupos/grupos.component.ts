@@ -19,10 +19,12 @@ export class GroupComponent {
     //--------------------------------------------------------------------------------------------
 
     groupName = "";                     // Campo para el nombre del nuevo grupo
+    groupText = "";                     // Filtro para el nombre de los grupos
+    participantText = "";               // Filtro para el nombre de los participantes
 
     groupList = [];                     // Atributo que guarda la lista de todos los grupos en el sistema que le pertenecen al master en sesion
     participantsList = [];              // Atributo que guarda la lista de participantes del grupo actualmente seleccionado
-    filteredUnasigned = [];          // Atributo que guarda la lista filtrada de los participantes que finalmente se muestra en la interfaz
+    filteredUnasigned = [];             // Atributo que guarda la lista filtrada de los participantes que finalmente se muestra en la interfaz
     filteredGroups = [];                // Atributo que guarda la lista filtrada de los participantes que finalmente se muestra en la interfaz
     unasignedList = [];                 // Atributo que guarda la lista de todos los participantes sin asignar en el sistema
 

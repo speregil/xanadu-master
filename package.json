@@ -21,7 +21,6 @@
     "@angular/platform-browser": "^6.1.0",
     "@angular/platform-browser-dynamic": "^6.1.0",
     "@angular/router": "^6.1.0",
-    "@syncfusion/ej2-angular-dropdowns": "^19.3.53",
     "core-js": "^2.5.4",
     "howler": "^2.1.2",
     "rxjs": "^6.0.0",
